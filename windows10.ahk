@@ -10,18 +10,16 @@ if(! A_IsAdmin)
   * constructed like this
   */
 globalDesktopManager := new JPGIncDesktopManagerClass()
-globalDesktopManager.setGoToDesktop("Capslock")
-    .setMoveWindowToDesktop("+#")
-    .afterGoToDesktop("turnCapslockOff")
-    .afterMoveWindowToDesktop("turnCapslockOff")
-    .setGoToNextDesktop("Capslock & w")
-    .setGoToPreviousDesktop("Capslock & q")
-    .setMoveWindowToNextDesktop("Capslock & s")
-    .setMoveWindowToPreviousDesktop("Capslock & a")
-    ;~ .followToDesktopAfterMovingWindow(true)
-	;~ .setCloseDesktop("Capslock & x")
-	;~ .setNewDesktop("Capslock & n")
-
+globalDesktopManager.setGoToDesktop("^!")
+    .setGoToNextDesktop("^!right")
+    .setGoToPreviousDesktop("^!left")
+    .setMoveWindowToNextDesktop("^!+right")
+    .setMoveWindowToPreviousDesktop("^!+left")
+    .followToDesktopAfterMovingWindow(true)
+	.setMoveWindowToDesktop("^!+")
+    .setCloseDesktop("^!x")
+	.setNewDesktop("^!d")
+	
 return
 
 #c::ExitApp
