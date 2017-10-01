@@ -1,35 +1,74 @@
-﻿^!f::
+﻿SetTitleMatchMode,RegEx
+
+#IfWinNotActive, is).*emacs.*
+ 
+^a::
+	sendInput, {home}
+RETURN
+^!a::
+	HotKey, ^a, off
+	sendInput, ^{a}
+	HotKey, ^a, on
+Return
+
+^!f::
 	HotKey, ^f, off
 	sendInput, ^{f}
 	HotKey, ^f, on
 Return
 
 ^f::
-	send, {right}
+	sendInput, {right}
 RETURN
 
 ^b::
-	send, {left}
+	sendInput, {left}
 RETURN
 
 !f::
-	send, ^{right}
+	sendInput, ^{right}
 RETURN
 !b::
-	send, ^{left}
+	sendInput, ^{left}
 RETURN
 ^n::
-	send, {down}
+	sendInput, {down}
 RETURN
 ^p::
-	send, {up}
+	sendInput, {up}
 RETURN
-^a::
-	send, {home}
-RETURN
+
 
 ^e::
-	send, {end}
+	sendInput, {end}
+RETURN
+
+^o::
+	sendInput, {enter}{up}
+RETURN
+
+^d::
+	sendInput, {delete}
+RETURN
+
+!d::
+	sendInput, ^{delete}
+RETURN
+
+^k::
+	sendInput, {shift down}
+	sendInput, {end}
+	sendInput, {shift up}
+	sendInput, ^{x}
 RETURN
 
 
+/*
+!<::
+	sendInput, ^{home}
+RETURN
+
+!>::
+	sendInput, ^{end}
+RETURN
+*/
